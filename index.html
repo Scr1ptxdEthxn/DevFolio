@@ -139,7 +139,7 @@
             ];
 
             groupIds.forEach(async id => {
-              const raw = await fetch(`https://groups.roblox.com/v1/groups/${id}`)
+              const raw = await fetch(`https://groups.roproxy.com/v1/groups/${id}`)
               const data = await raw.json()
 
               if (raw.ok) {
