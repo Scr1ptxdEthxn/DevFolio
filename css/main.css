@@ -501,44 +501,6 @@ section .row span {
     }
 }
 
-.work-history {
-  margin-top: 20px;
-}
-
-.work-row {
-  display: grid;
-  grid-template-columns: 220px 150px 1fr 200px;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 10px;
-}
-
-.work-row .name a {
-  font-weight: 600;
-}
-
-.work-row .members {
-  opacity: 0.8;
-}
-
-.work-row .dates {
-  text-align: right;
-  opacity: 0.8;
-}
-
-/* Mobile-friendly stacking */
-@media (max-width: 700px) {
-  .work-row {
-    grid-template-columns: 1fr;
-    text-align: left;
-  }
-
-  .work-row .dates {
-    text-align: left;
-  }
-}
-
-
 #hero {
     min-height: 100vh;
     height: 100vh;
@@ -807,4 +769,46 @@ section .row span {
         margin-bottom: 3.2rem;
         transform: none
     }
+}
+
+/* ================================
+   WORK HISTORY — FINAL FIXED CSS
+   ================================ */
+
+.work-history {
+  margin-top: 20px;
+  display: block !important; /* Prevents parent .row grid from interfering */
+}
+
+.work-history .work-row {
+  display: grid !important; /* Force grid layout */
+  grid-template-columns: 220px 150px 1fr 200px; /* Name | Members | Role | Dates */
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.work-history .work-row .name a {
+  font-weight: 600;
+}
+
+.work-history .work-row .members {
+  opacity: 0.8;
+}
+
+.work-history .work-row .dates {
+  text-align: right;
+  opacity: 0.8;
+}
+
+/* Mobile-friendly stacking */
+@media (max-width: 700px) {
+  .work-history .work-row {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .work-history .work-row .dates {
+    text-align: left;
+  }
 }
