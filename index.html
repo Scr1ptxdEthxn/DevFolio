@@ -74,111 +74,69 @@
   <!-- /END Hero Section -->
 
   <!-- About Section -->
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <div class="row about-wrapper">
-        <div class="about-wrapper__image">
-          <img class="img-fluid" src="./assets/profile.png" alt="Profile Image" width="450" height="350" />
-        </div>
-        <div class="about-wrapper__info">
-          <p class="about-wrapper__info-text">
-            Greetings. My name is Ethan and I am commonly known for my development work in RoMart as a Senior Developer.
-            However
-            outside of RoMart, I do also just generally enjoy programming in both JavaScript/TypeScript and
-            Luau.<br><br>
-            I AM NOT A UI DESIGNER IN ANY CAPACTITY. I AM A PROGRAMMER.
-          </p>
-        </div>
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <div class="row about-wrapper">
+      <div class="about-wrapper__image">
+        <img class="img-fluid" src="./assets/profile.png" alt="Profile Image" width="450" height="350" />
+      </div>
+      <div class="about-wrapper__info">
+        <p class="about-wrapper__info-text">
+          Greetings. My name is Ethan and I am commonly known for my development work in RoMart as a Senior Developer.
+          However outside of RoMart, I do also just generally enjoy programming in both JavaScript/TypeScript and Luau.
+          <br><br>
+          I AM NOT A UI DESIGNER IN ANY CAPACITY. I AM A PROGRAMMER.
+        </p>
       </div>
     </div>
-    <div class="container">
-      <h2 class="section-title">My work history</h2>
-      <div class="row about-wrapper" style="display: flex; justify-content: center;">
-        <div class="about-wrapper__info" style="display: flex; justify-content: center; font-size: inherit;">
-          <table class="experience-table">
-            <tr>
-              <td>
-                <a href="https://www.roblox.com/communities/32527698/Flybmi">
-                  Fly BMI
-                </a>
-              </td>
-              <td><span id="group-32527698">Loading...</span> members</td>
-              <td>Engineering & Technical Officer</td>
-              <td>December 2025 - Present</td>
-            </tr>
+  </div>
 
-            <tr>
-              <td>
-                <a href="https://www.roblox.com/communities/32889454/Swift-Shopping-Corporation">
-                  Swift Shopping
-                </a>
-              </td>
-              <td><span id="group-32889454">Loading...</span> members</td>
-              <td>Development Director</td>
-              <td>November 2025 - Present</td>
-            </tr>
+  <div class="container">
+    <h2 class="section-title">My work history</h2>
 
-            <tr>
-              <td>
-                <a href="https://www.roblox.com/communities/33101468/Oak-Hill-Academy">
-                  Oakhill Academy
-                </a>
-              </td>
-              <td><span id="group-33101468">Loading...</span> members</td>
-              <td>Engineering & Technical Officer</td>
-              <td>November 2025 - Present</td>
-            </tr>
+    <div class="work-history">
 
-            <tr>
-              <td>
-                <a href="https://www.roblox.com/communities/13874159/RoMart-Corporation">
-                  RoMart Shopping
-                </a>
-              </td>
-              <td><span id="group-13874159">Loading...</span> members</td>
-              <td>Senior Developer</td>
-              <td>October 2024 - Present</td>
-            </tr>
-
-            <tr>
-              <td>
-                <a href="https://www.roblox.com/communities/4720080/Crystal-Bay-Resorts">
-                  Crystal Bay Resorts
-                </a>
-              </td>
-              <td><span id="group-4720080">Loading...</span> members</td>
-              <td>Head Developer</td>
-              <td>August 2023 - May 2025</td>
-            </tr>
-          </table>
-          <script>
-            const groupIds = [
-              32527698,
-              32889454,
-              33101468,
-              13874159,
-              4720080
-            ];
-
-            groupIds.forEach(async id => {
-              const raw = await fetch(`https://api.allorigins.win/raw?url=https://groups.roblox.com/v1/groups/${id}`)
-              const data = await raw.json()
-
-              if (raw.ok) {
-                document.getElementById(`group-${id}`).textContent = data.memberCount;
-              }
-              else {
-                console.log(raw)
-                console.log(data)
-                document.getElementById(`group-${id}`).textContent = "N/A";
-              }
-            });
-          </script>
-        </div>
+      <div class="work-row">
+        <span class="name"><a href="https://www.roblox.com/communities/32527698/Flybmi">Fly BMI</a></span>
+        <span class="members">1.2k members</span>
+        <span class="role">Engineering & Technical Officer</span>
+        <span class="dates">December 2025 - Present</span>
       </div>
+
+      <div class="work-row">
+        <span class="name"><a href="https://www.roblox.com/communities/32889454/Swift-Shopping-Corporation">Swift Shopping</a></span>
+        <span class="members">13.9k members</span>
+        <span class="role">Development Director</span>
+        <span class="dates">November 2025 - Present</span>
+      </div>
+
+      <div class="work-row">
+        <span class="name"><a href="https://www.roblox.com/communities/33101468/Oak-Hill-Academy">Oakhill Academy</a></span>
+        <span class="members">430 members</span>
+        <span class="role">Engineering & Technical Officer</span>
+        <span class="dates">November 2025 - Present</span>
+      </div>
+
+      <div class="work-row">
+        <span class="name"><a href="https://www.roblox.com/communities/13874159/RoMart-Corporation">RoMart Shopping</a></span>
+        <span class="members">570k+ members</span>
+        <span class="role">Senior Developer</span>
+        <span class="dates">October 2024 - Present</span>
+      </div>
+
+      <div class="work-row">
+        <span class="name"><a href="https://www.roblox.com/communities/4720080/Crystal-Bay-Resorts">Crystal Bay Resorts</a></span>
+        <span class="members">2k members</span>
+        <span class="role">Head Developer</span>
+        <span class="dates">August 2023 - May 2025</span>
+      </div>
+
+      <p style="font-size: xx-small; margin-top: 10px;">Member count last update 2nd March 2026</p>
     </div>
-  </section>
+  </div>
+</section>
+
   <!-- /END About Section -->
 
   <!--Projects Section-->
