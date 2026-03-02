@@ -83,25 +83,32 @@
       const current = words[wordIndex];
 
       if (!deleting) {
-        el.textContent = current.slice(0, charIndex++);
-        if (charIndex > current.length) {
+        el.textContent = current.substring(0, charIndex + 1);
+        charIndex++;
+
+        if (charIndex === current.length) {
           deleting = true;
           setTimeout(typeLoop, 1000);
           return;
         }
       } else {
-        el.textContent = current.slice(0, charIndex--);
-        if (charIndex < 0) {
+        el.textContent = current.substring(0, charIndex - 1);
+        charIndex--;
+
+        if (charIndex === 0) {
           deleting = false;
           wordIndex = (wordIndex + 1) % words.length;
         }
       }
 
-      setTimeout(typeLoop, deleting ? 50 : 100);
+      setTimeout(typeLoop, deleting ? 60 : 120);
     }
 
+    // Ensure the element starts empty
+    el.textContent = "";
     typeLoop();
   </script>
+
 
   <!-- /END Hero Section -->
 
