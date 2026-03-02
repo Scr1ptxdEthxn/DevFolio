@@ -95,40 +95,63 @@
     <div class="container">
       <h2 class="section-title">My work history</h2>
       <div class="row about-wrapper" style="display: flex; justify-content: center;">
-        <div class="about-wrapper__info" style="display: flex; justify-content: center;">
-          <p class="about-wrapper__info-text">
-            <a href="https://www.roblox.com/communities/32527698/Flybmi">
-              Fly BMI
-            </a>
-            (<span id="group-32527698">Loading...</span> members)
-            (Engineering & Technical Officer):
-            December 2025 - Present.<br>
+        <div class="about-wrapper__info" style="display: flex; justify-content: center; font-size: inherit;">
+          <table class="experience-table">
+            <tr>
+              <td>
+                <a href="https://www.roblox.com/communities/32527698/Flybmi">
+                  Fly BMI
+                </a>
+              </td>
+              <td><span id="group-32527698">Loading...</span> members</td>
+              <td>Engineering & Technical Officer</td>
+              <td>December 2025 - Present</td>
+            </tr>
 
-            <a href="https://www.roblox.com/communities/32889454/Swift-Shopping-Corporation">
-              Swift Shopping
-            </a>
-            (<span id="group-32889454">Loading...</span> members)
-            (Development Director): November 2025 - Present.<br>
+            <tr>
+              <td>
+                <a href="https://www.roblox.com/communities/32889454/Swift-Shopping-Corporation">
+                  Swift Shopping
+                </a>
+              </td>
+              <td><span id="group-32889454">Loading...</span> members</td>
+              <td>Development Director</td>
+              <td>November 2025 - Present</td>
+            </tr>
 
-            <a href="https://www.roblox.com/communities/33101468/Oak-Hill-Academy">
-              Oakhill Academy
-            </a>
-            (<span id="group-33101468">Loading...</span> members)
-            (Engineering & Technical Officer): November 2025 - Present.<br>
+            <tr>
+              <td>
+                <a href="https://www.roblox.com/communities/33101468/Oak-Hill-Academy">
+                  Oakhill Academy
+                </a>
+              </td>
+              <td><span id="group-33101468">Loading...</span> members</td>
+              <td>Engineering & Technical Officer</td>
+              <td>November 2025 - Present</td>
+            </tr>
 
-            <a href="https://www.roblox.com/communities/13874159/RoMart-Corporation">
-              RoMart Shopping
-            </a>
-            (<span id="group-13874159">Loading...</span> members)
-            (Senior Developer): October 2024 - Present.<br>
+            <tr>
+              <td>
+                <a href="https://www.roblox.com/communities/13874159/RoMart-Corporation">
+                  RoMart Shopping
+                </a>
+              </td>
+              <td><span id="group-13874159">Loading...</span> members</td>
+              <td>Senior Developer</td>
+              <td>October 2024 - Present</td>
+            </tr>
 
-            <a href="https://www.roblox.com/communities/4720080/Crystal-Bay-Resorts">
-              Crystal Bay Resorts
-            </a>
-            (<span id="group-4720080">Loading...</span> members)
-            (Head Developer): August 2023 - May 2025.<br>
-
-          </p>
+            <tr>
+              <td>
+                <a href="https://www.roblox.com/communities/4720080/Crystal-Bay-Resorts">
+                  Crystal Bay Resorts
+                </a>
+              </td>
+              <td><span id="group-4720080">Loading...</span> members</td>
+              <td>Head Developer</td>
+              <td>August 2023 - May 2025</td>
+            </tr>
+          </table>
           <script>
             const groupIds = [
               32527698,
@@ -139,7 +162,7 @@
             ];
 
             groupIds.forEach(async id => {
-              const raw = await fetch(`https://groups.roproxy.com/v1/groups/${id}`)
+              const raw = await fetch(`https://api.allorigins.win/raw?url=https://groups.roblox.com/v1/groups/${id}`)
               const data = await raw.json()
 
               if (raw.ok) {
