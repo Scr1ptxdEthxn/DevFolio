@@ -138,15 +138,18 @@
               4720080
             ];
 
-            groupIds.forEach(id => {
-              fetch(`https://groups.roblox.com/v1/groups/${id}`)
-                .then(res => res.json())
-                .then(data => {
-                  document.getElementById(`group-${id}`).textContent = data.memberCount;
-                })
-                .catch(() => {
-                  document.getElementById(`group-${id}`).textContent = "N/A";
-                });
+            groupIds.forEach(async id => {
+              const raw = await fetch(`https://groups.roblox.com/v1/groups/${id}`)
+              const data = await raw.json()
+
+              if (raw.ok) {
+                document.getElementById(`group-${id}`).textContent = data.memberCount;
+              }
+              else {
+                console.log(raw)
+                console.log(data)
+                document.getElementById(`group-${id}`).textContent = "N/A";
+              }
             });
           </script>
         </div>
