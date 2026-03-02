@@ -97,18 +97,58 @@
       <div class="row about-wrapper" style="display: flex; justify-content: center;">
         <div class="about-wrapper__info" style="display: flex; justify-content: center;">
           <p class="about-wrapper__info-text">
-            <a href="https://www.roblox.com/communities/32527698/Flybmi">Fly BMI</a> (Engineering & Technical Officer):
+            <a href="https://www.roblox.com/communities/32527698/Flybmi">
+              Fly BMI
+            </a>
+            (<span id="group-32527698">Loading...</span> members)
+            (Engineering & Technical Officer):
             December 2025 - Present.<br>
-            <a href="https://www.roblox.com/communities/32889454/Swift-Shopping-Corporation">Swift Shopping</a>
+
+            <a href="https://www.roblox.com/communities/32889454/Swift-Shopping-Corporation">
+              Swift Shopping
+            </a>
+            (<span id="group-32889454">Loading...</span> members)
             (Development Director): November 2025 - Present.<br>
-            <a href="https://www.roblox.com/communities/33101468/Oak-Hill-Academy">Oakhill Academy</a> (Engineering &
-            Technical Officer): November 2025 - Present.<br>
-            <a href="https://www.roblox.com/communities/13874159/RoMart-Corporation">RoMart Shopping</a> (Senior
-            Developer): October 2024 - Present.<br>
-            <a href="https://www.roblox.com/communities/4720080/Crystal-Bay-Resorts">Crystal Bay Resorts</a> (Head
-            Developer): August 2023 - May 2025.<br>
+
+            <a href="https://www.roblox.com/communities/33101468/Oak-Hill-Academy">
+              Oakhill Academy
+            </a>
+            (<span id="group-33101468">Loading...</span> members)
+            (Engineering & Technical Officer): November 2025 - Present.<br>
+
+            <a href="https://www.roblox.com/communities/13874159/RoMart-Corporation">
+              RoMart Shopping
+            </a>
+            (<span id="group-13874159">Loading...</span> members)
+            (Senior Developer): October 2024 - Present.<br>
+
+            <a href="https://www.roblox.com/communities/4720080/Crystal-Bay-Resorts">
+              Crystal Bay Resorts
+            </a>
+            (<span id="group-4720080">Loading...</span> members)
+            (Head Developer): August 2023 - May 2025.<br>
 
           </p>
+          <script>
+            const groupIds = [
+              32527698,
+              32889454,
+              33101468,
+              13874159,
+              4720080
+            ];
+
+            groupIds.forEach(id => {
+              fetch(`https://groups.roblox.com/v1/groups/${id}`)
+                .then(res => res.json())
+                .then(data => {
+                  document.getElementById(`group-${id}`).textContent = data.memberCount;
+                })
+                .catch(() => {
+                  document.getElementById(`group-${id}`).textContent = "N/A";
+                });
+            });
+          </script>
         </div>
       </div>
     </div>
