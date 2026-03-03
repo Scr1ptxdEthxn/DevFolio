@@ -59,7 +59,7 @@
   <div id="hero">
     <section class="container">
       <h1 class="hero-title">
-        Hi, my name is <span class="text-color-main name">Ethan</span>
+        Hi, my name is <span id="typedname" class="text-color-main name">Ethan</span>
         <br />
         I'm a <span id="typed" class="text-color-main name"></span> programmer
       </h1>
@@ -102,6 +102,43 @@
       }
 
       setTimeout(typeLoop, deleting ? 60 : 120);
+    }
+
+    // Ensure the element starts empty
+    el.textContent = "";
+    typeLoop();
+  </script>
+    <script>
+    const names = ["Ethan", "ethxnetcable", "Scr1ptxdEthxn"];
+    const el = document.getElementById("typed");
+
+    let nameIndex = 0;
+    let char = 0;
+    let deletingg = false;
+
+    function typeLoop() {
+      const current = names[nameIndex];
+
+      if (!deletingg) {
+        el.textContent = current.substring(0, char + 1);
+        char++;
+
+        if (char === current.length) {
+          deletingg = true;
+          setTimeout(typeLoop, 1000);
+          return;
+        }
+      } else {
+        el.textContent = current.substring(0, char - 1);
+        char--;
+
+        if (char === 0) {
+          deletingg = false;
+          nameIndex = (nameIndex + 1) % names.length;
+        }
+      }
+
+      setTimeout(typeLoop, deletingg ? 60 : 120);
     }
 
     // Ensure the element starts empty
