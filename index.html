@@ -116,7 +116,7 @@
     let char = 0;
     let deletingg = false;
 
-    function typeLoop() {
+    function typeLoop2() {
       const current = names[nameIndex];
 
       if (!deletingg) {
@@ -125,7 +125,7 @@
 
         if (char === current.length) {
           deletingg = true;
-          setTimeout(typeLoop, 1000);
+          setTimeout(typeLoop2, 1000);
           return;
         }
       } else {
@@ -138,12 +138,12 @@
         }
       }
 
-      setTimeout(typeLoop, deletingg ? 60 : 120);
+      setTimeout(typeLoop2, deletingg ? 60 : 120);
     }
 
     // Ensure the element starts empty
     elem.textContent = "";
-    typeLoop();
+    typeLoop2();
   </script>
 
 
