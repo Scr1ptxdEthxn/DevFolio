@@ -71,80 +71,55 @@
       <div class="scroll-down"></div>
     </a>
   </div>
-  <script>
-    const words = ["python", "luau", "javascript", "typescript"];
-    const el = document.getElementById("typed");
+<script>
+  const words = ["python", "luau", "javascript", "typescript"];
+  const names = ["Ethan", "ethxnetcable", "Scr1ptxdEthxn"];
 
-    let wordIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
+  const el = document.getElementById("typed");
+  const elem = document.getElementById("typedname");
 
-    function typeLoop() {
-      const current = words[wordIndex];
+  let index = 0;
+  let charIndex = 0;
+  let deleting = false;
 
-      if (!deleting) {
-        el.textContent = current.substring(0, charIndex + 1);
-        charIndex++;
+  function typeLoop() {
+    const currentWord = words[index % words.length];
+    const currentName = names[index % names.length];
 
-        if (charIndex === current.length) {
-          deleting = true;
-          setTimeout(typeLoop, 1000);
-          return;
-        }
-      } else {
-        el.textContent = current.substring(0, charIndex - 1);
-        charIndex--;
+    const maxLength = Math.max(currentWord.length, currentName.length);
 
-        if (charIndex === 0) {
-          deleting = false;
-          wordIndex = (wordIndex + 1) % words.length;
-        }
+    if (!deleting) {
+      // Typing
+      el.textContent = currentWord.substring(0, Math.min(charIndex + 1, currentWord.length));
+      elem.textContent = currentName.substring(0, Math.min(charIndex + 1, currentName.length));
+
+      charIndex++;
+
+      if (charIndex >= maxLength) {
+        deleting = true;
+        setTimeout(typeLoop, 1000); // pause before deleting
+        return;
       }
+    } else {
+      // Deleting
+      el.textContent = currentWord.substring(0, Math.min(charIndex - 1, currentWord.length));
+      elem.textContent = currentName.substring(0, Math.min(charIndex - 1, currentName.length));
 
-      setTimeout(typeLoop, deleting ? 60 : 120);
+      charIndex--;
+
+      if (charIndex <= 0) {
+        deleting = false;
+        index++; // move to next pair
+      }
     }
 
-    // Ensure the element starts empty
-    el.textContent = "";
-    typeLoop();
-  </script>
-  <script>
-    const names = ["Ethan", "ethxnetcable", "Scr1ptxdEthxn"];
-    const elem = document.getElementById("typedname");
+    setTimeout(typeLoop, deleting ? 60 : 120);
+  }
 
-    let nameIndex = 0;
-    let char = 0;
-    let deletingg = false;
-
-    function typeLoop2() {
-      const current = names[nameIndex];
-
-      if (!deletingg) {
-        elem.textContent = current.substring(0, char + 1);
-        char++;
-
-        if (char === current.length) {
-          deletingg = true;
-          setTimeout(typeLoop2, 1000);
-          return;
-        }
-      } else {
-        elem.textContent = current.substring(0, char - 1);
-        char--;
-
-        if (char === 0) {
-          deletingg = false;
-          nameIndex = (nameIndex + 1) % names.length;
-        }
-      }
-
-      setTimeout(typeLoop2, deletingg ? 60 : 120);
-    }
-
-    // Ensure the element starts empty
-    elem.textContent = "";
-    typeLoop2();
-  </script>
+  el.textContent = "";
+  elem.textContent = "";
+  typeLoop();
+</script>
 
 
   <!-- /END Hero Section -->
