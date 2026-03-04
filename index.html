@@ -187,7 +187,7 @@
         <span id="projects-container"></span>
 
         <script>
-          fetch('/projects-content.html')
+          fetch('/allprojects/projects.html')
             .then(response => response.text())
             .then(data => {
               document.getElementById('projects-container').innerHTML = data;
