@@ -55,129 +55,6 @@
 </head>
 
 <body>
-  <!-- Hero Section -->
-  <div id="hero">
-    <section class="container">
-      <h1 class="hero-title">
-        Hi, my name is <span id="typedname" class="text-color-main name">Ethan</span>
-        <br />
-        I'm a <span id="typed" class="text-color-main name"></span> programmer
-      </h1>
-      <p class="hero-cta">
-        <a class="cta-btn cta-btn--hero" href="#contact">Get in touch</a>
-      </p>
-    </section>
-    <a href="#about" class="scroll-down-link" aria-label="scroll-down">
-      <div class="scroll-down"></div>
-    </a>
-  </div>
-  <script>
-    const words = ["python", "luau", "javascript", "typescript"];
-    const names = ["Ethan", "ethxnetcable", "Scr1ptxdEthxn"];
-
-    const el = document.getElementById("typed");
-    const elem = document.getElementById("typedname");
-
-    let index = 0;
-    let charIndex = 0;
-    let deleting = false;
-
-    function typeLoop() {
-      const currentWord = words[index % words.length];
-      const currentName = names[index % names.length];
-
-      const maxLength = Math.max(currentWord.length, currentName.length);
-
-      if (!deleting) {
-        // Typing
-        el.textContent = currentWord.substring(0, Math.min(charIndex + 1, currentWord.length));
-        elem.textContent = currentName.substring(0, Math.min(charIndex + 1, currentName.length));
-
-        charIndex++;
-
-        if (charIndex >= maxLength) {
-          deleting = true;
-          setTimeout(typeLoop, 1000); // pause before deleting
-          return;
-        }
-      } else {
-        // Deleting
-        el.textContent = currentWord.substring(0, Math.min(charIndex - 1, currentWord.length));
-        elem.textContent = currentName.substring(0, Math.min(charIndex - 1, currentName.length));
-
-        charIndex--;
-
-        if (charIndex <= 0) {
-          deleting = false;
-          index++; // move to next pair
-        }
-      }
-
-      setTimeout(typeLoop, deleting ? 60 : 120);
-    }
-
-    el.textContent = "";
-    elem.textContent = "";
-    typeLoop();
-  </script>
-
-
-  <!-- /END Hero Section -->
-
-  <!-- About Section -->
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <div class="row about-wrapper">
-        <div class="about-wrapper__image">
-          <img class="img-fluid" src="./assets/profile.png" alt="Profile Image" width="450" height="350" />
-        </div>
-        <div class="about-wrapper__info">
-          <p class="about-wrapper__info-text">
-            Greetings. My name is Ethan and I am commonly known for my development work in RoMart as a Senior Developer.
-            However
-            outside of RoMart, I do also just generally enjoy programming in both JavaScript/TypeScript and
-            Luau.<br><br>
-            I AM NOT A UI DESIGNER IN ANY CAPACTITY. I AM A PROGRAMMER.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <h2 class="section-title">My work history</h2>
-      <div class="row about-wrapper" style="display: flex; justify-content: center;">
-        <div class="about-wrapper__info" style="display: flex; justify-content: center;">
-          <p class="about-wrapper__info-text">
-            <a href="https://www.roblox.com/communities/13874159/RoMart-Corporation"
-              style="color:blue; text-decoration: none;">RoMart Shopping</a> (570k+ members)
-            (Senior
-            Developer): October 2024 - Present.<br>
-            <a href="https://www.roblox.com/communities/32889454/Swift-Shopping-Corporation"
-              style="color:blue; text-decoration: none;">Swift Shopping</a>
-            (14k members) (Development Director): November 2025 - Present.<br>
-            <a href="https://www.roblox.com/communities/4720080/Crystal-Bay-Resorts"
-              style="color:blue; text-decoration: none;">Crystal Bay Resorts</a> (2k
-            members) (Head
-            Developer): August 2023 - May 2025.<br>
-            <a href="https://www.roblox.com/communities/32527698/Flybmi" style="color:blue; text-decoration: none;">Fly
-              BMI</a> (1.2k members) (Engineering &
-            Technical Officer):
-            December 2025 - Present.<br>
-            <a href="https://www.roblox.com/communities/33101468/Oak-Hill-Academy"
-              style="color:blue; text-decoration: none;">Oakhill Academy</a> (430 members)
-            (Engineering &
-            Technical Officer): November 2025 - Present.<br>
-          </p>
-        </div>
-
-      </div>
-    </div>
-    <p style="font-size: xx-small;">Member counts last updated 2nd March 2026<br>Rank displayed is the highest rank
-      achieved in group.<br>Groups are ordered by decreasing member count.</p>
-  </section>
-
-  <!-- /END About Section -->
-
   <!--Projects Section-->
   <section id="projects">
     <div class="container">
@@ -300,6 +177,20 @@
         <!-- /END Project -->
 
         <!-- Each .row is a project -->
+        <article class="row" style="display: flex; justify-content: center;">
+          <div class="project-wrapper__text">
+            <h3 class="project-wrapper__text-title">Nametag system</h3>
+            <p class="project-wrapper__text-info">
+              I am currently unable to get a screenshot of this at the moment, however when Unity Systems was still
+              kicking as a subsidary of DRS, I was known well for
+              maintaining and adding to the nametag system sold at the time.
+            </p>
+          </div>
+
+        </article>
+        <!-- /END Project -->
+
+        <!-- Each .row is a project -->
         <article class="row">
           <div class="project-wrapper__text">
             <h3 class="project-wrapper__text-title">Ordering system</h3>
@@ -342,11 +233,11 @@
 
   <section id="projects">
     <div class="container">
-      <h2 class="section-title">Other projects</h2>
+      <h2 class="section-title">Main page</h2>
       <div class="contact-wrapper">
-        <p class="contact-wrapper__text">Click below to see a list of every project I have worked on.<br><br></p>
+        <p class="contact-wrapper__text">Click below to go back to the main page.<br><br></p>
         <p class="hero-cta">
-          <a class="cta-btn cta-btn--hero" href="/projects">All projects</a>
+          <a class="cta-btn cta-btn--hero" href="/">Main portfolio</a>
         </p>
       </div>
     </div>
